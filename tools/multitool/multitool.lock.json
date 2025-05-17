@@ -1,0 +1,97 @@
+{
+  "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+  "cosign": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-linux-amd64",
+        "sha256": "1f6c194dd0891eb345b436bb71ff9f996768355f5e0ce02dde88567029ac2188",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-linux-arm64",
+        "sha256": "080a998f9878f22dafdb9ad54d5b2e2b8e7a38c53527250f9d89a6763a28d545",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-darwin-amd64",
+        "sha256": "d61cc50f6f32c2b63cb81cd8a935e5dd1be8520d639242031a1102092bee44d4",
+        "os": "macos",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-darwin-arm64",
+        "sha256": "780da3654d9601367b0d54686ac65cb9716578610cabe292d725c7008de4db85",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-windows-amd64.exe",
+        "sha256": "2345667cbcf60767c1a6f678755cbb7465367761084e9d2cbb59ae0cc1a94437",
+        "os": "windows",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/sigstore/cosign/releases/download/v2.5.0/cosign-windows-amd64.exe",
+        "sha256": "2345667cbcf60767c1a6f678755cbb7465367761084e9d2cbb59ae0cc1a94437",
+        "os": "windows",
+        "cpu": "arm64"
+      }
+    ]
+  },
+  "zstd": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/aspect-build/zstd-prebuilt/releases/download/v1.5.6/zstd_linux_amd64",
+        "sha256": "0f0bd1193509a598629d7fa745c4b0b6d5fa6719e0c94c01ef0f20e466d801a7",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/aspect-build/zstd-prebuilt/releases/download/v1.5.6/zstd_linux_arm64",
+        "sha256": "82aacf8f1c67ff3c94e04afb0721a848bbba70fbf8249ee4bc4c9085afb84548",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/aspect-build/zstd-prebuilt/releases/download/v1.5.6/zstd_darwin_amd64",
+        "sha256": "e4d517212005cf26f8b8d657455d1380318b071cb52a3ffd9dfbdf4c2ba71a13",
+        "os": "macos",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/aspect-build/zstd-prebuilt/releases/download/v1.5.6/zstd_darwin_arm64",
+        "sha256": "6e210eeae08fb6ba38c3ac2d1857075c28113aef68296f7e396f1180f7e894b9",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "archive",
+        "file": "zstd-v1.5.6-win64/zstd",
+        "url": "https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-v1.5.6-win64.zip",
+        "sha256": "7b4eff6719990e38aca93a4844c2e86a1935090625c4611f7e89675e999c56cc",
+        "os": "windows",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "archive",
+        "file": "zstd-v1.5.6-win64/zstd",
+        "url": "https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-v1.5.6-win64.zip",
+        "sha256": "7b4eff6719990e38aca93a4844c2e86a1935090625c4611f7e89675e999c56cc",
+        "os": "windows",
+        "cpu": "arm64"
+      }
+    ]
+  }
+}

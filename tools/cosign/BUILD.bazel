@@ -1,0 +1,23 @@
+load("@rules_oci//cosign:toolchain.bzl", "cosign_toolchain")
+
+alias(
+    name = "cosign",
+    actual = "@multitool//tools/cosign",
+)
+
+# It seems rules_oci currently only provides the
+# register_cosign_toolchains() macro for
+# WORKSPACE-based repositories, not MODULE-based ones.
+# So we provide our own toolchain.
+cosign_toolchain(
+    name = "_cosign_toolchain",
+    cosign = ":cosign",
+    visibility = ["//visibility:private"],
+)
+
+toolchain(
+    name = "cosign_toolchain",
+    toolchain = ":_cosign_toolchain",
+    toolchain_type = "@rules_oci//cosign:toolchain_type",
+    use_target_platform_constraints = True,
+)

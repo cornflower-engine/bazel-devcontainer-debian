@@ -1,0 +1,12 @@
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+
+# At this time, the check-requirements.sh file cannot be run successfully
+# due to the inability to generate ls.so.cache from outside the container.
+pkg_tar(
+    name = "vscode",
+    srcs = ["vscode-skip-server-requirements-check"],
+    compressor = "//tools/zstd",
+    compressor_args = "--ultra -22",
+    extension = "tar.zst",
+    package_dir = "tmp",
+)

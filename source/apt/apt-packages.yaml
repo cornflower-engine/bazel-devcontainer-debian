@@ -1,0 +1,32 @@
+# NOTE:
+# After updating this file, make sure to run
+# 'bazel run //source/apt:refresh'.
+
+version: 1
+
+sources:
+  - channel: trixie main
+    url: https://snapshot.debian.org/archive/debian/20250101T023759Z/
+
+archs:
+  - amd64
+  - arm64
+
+packages:
+  # Required for DevContainer to launch.
+  # See: https://code.visualstudio.com/docs/remote/faq
+  # - libc6     ### Manually specifying this causes circular dependency chain.
+  # - binutils  ### Seemingly not actually required.
+  - libc-bin
+  - libstdc++6
+  - busybox
+  # Bash shell.
+  # Pretty much required for running Bazel genrules.
+  - bash
+  # CA certificates.
+  - ca-certificates
+  # Timezone data.
+  - tzdata
+  # Git version control system.
+  - git
+  - git-lfs

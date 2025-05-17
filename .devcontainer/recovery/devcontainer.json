@@ -1,0 +1,9 @@
+{
+  // This container can be used when the Bazel DevContainer
+  // itself is in a non-working state.
+  "name": "Debian",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "features": {
+    "ghcr.io/devcontainers-community/features/bazel:1": {}
+  }
+}

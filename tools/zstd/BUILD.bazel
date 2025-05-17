@@ -1,0 +1,4 @@
+alias(
+    name = "zstd",
+    actual = "@multitool//tools/zstd",
+)

@@ -1,0 +1,40 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_mklink")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load(":defs.bzl", "applets")
+
+# Refresh lockfile.
+alias(
+    name = "refresh",
+    actual = "@apt_packages//:lock",
+)
+
+# BusyBox applet symlinks.
+[
+    pkg_mklink(
+        name = applet,
+        link_name = applet,
+        target = "busybox",
+    )
+    for applet in applets
+]
+
+pkg_tar(
+    name = "busybox_symlinks",
+    srcs = [
+        ":{}".format(applet)
+        for applet in applets
+    ],
+    package_dir = "./usr/bin",
+)
+
+pkg_tar(
+    name = "apt",
+    srcs = [],
+    compressor = "//tools/zstd",
+    compressor_args = "--ultra -22",
+    extension = "tar.zst",
+    deps = [
+        ":busybox_symlinks",
+        "@apt_packages",
+    ],
+)

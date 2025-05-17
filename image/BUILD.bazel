@@ -1,0 +1,47 @@
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_image_index")
+load("@rules_syft//syft:defs.bzl", "syft_generate_sbom")
+load(":defs.bzl", "metadata")
+
+oci_image(
+    name = "single_platform",
+    architecture = select({
+        "//platform/constraint:linux_amd64": "amd64",
+        "//platform/constraint:linux_arm64": "arm64",
+    }),
+    env = {
+        "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin",
+        "SSL_CERT_FILE": "/etc/ssl/certs/ca-certificates.crt",
+    },
+    labels = {
+        "devcontainer.metadata": metadata,
+    },
+    os = "linux",
+    # buildifier: leave-alone
+    tars = [
+        "//source/apt",
+        "//source/bazelisk",
+        "//source/vscode",
+        "//source/config",
+    ],
+    user = "nonroot",
+    variant = select({
+        "//platform/constraint:linux_amd64": "",
+        "//platform/constraint:linux_arm64": "v8",
+    }),
+    workdir = "/home/nonroot",
+)
+
+oci_image_index(
+    name = "multi_platform",
+    images = [":single_platform"],
+    platforms = [
+        "//platform:linux_amd64",
+        "//platform:linux_arm64",
+    ],
+)
+
+syft_generate_sbom(
+    name = "sbom",
+    image = "//image:single_platform",
+    type = "spdx-json",
+)

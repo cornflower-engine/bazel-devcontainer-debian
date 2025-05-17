@@ -1,0 +1,76 @@
+name: Build and Upload the Container a Registry
+
+on: workflow_dispatch
+
+jobs:
+  build-container:
+    runs-on: ubuntu-latest
+
+    env:
+      THREADS: 4
+      REPOSITORY: ghcr.io/${{ github.repository }}
+
+    permissions:
+      contents: read
+      # Needed for uploading to the GitHub Container Registry.
+      packages: write
+      # Needed for signing the images with a GitHub OIDC Token.
+      id-token: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set Up Bazel
+        uses: bazel-contrib/setup-bazel@main
+        with:
+          # Avoid downloading Bazel every time.
+          bazelisk-cache: true
+          # Share external cache between workflows.
+          external-cache: true
+          # Share repository cache between workflows.
+          repository-cache: true
+          # Store build cache per workflow.
+          disk-cache: ${{ github.workflow }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Build and Upload Image
+        run: >-
+          bazel run //image/upload
+          --jobs ${THREADS}
+          --
+          --repository ${REPOSITORY}
+          --tag latest
+
+      - name: Upload Image SBOM
+        run: >-
+          bazel run //image/upload:attest
+          --jobs ${THREADS}
+          --platforms=//platform:linux_amd64
+          --
+          --repository ${REPOSITORY}
+          --yes
+          ;
+          bazel run //image/upload:attest
+          --jobs ${THREADS}
+          --platforms=//platform:linux_arm64
+          --
+          --repository ${REPOSITORY}
+          --yes
+
+      - name: Sign Image
+        run: >-
+          bazel run //image/upload:sign
+          --jobs ${THREADS}
+          --
+          --repository ${REPOSITORY}
+          --yes
+          --recursive

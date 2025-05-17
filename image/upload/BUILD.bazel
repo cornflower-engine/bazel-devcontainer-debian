@@ -1,0 +1,22 @@
+load("@rules_oci//cosign:defs.bzl", "cosign_attest", "cosign_sign")
+load("@rules_oci//oci:defs.bzl", "oci_push")
+
+oci_push(
+    name = "upload",
+    image = "//image:multi_platform",
+    repository = "ADD-VIA-COMMAND-LINE",
+)
+
+cosign_sign(
+    name = "sign",
+    image = "//image:multi_platform",
+    repository = "ADD-VIA-COMMAND-LINE",
+)
+
+cosign_attest(
+    name = "attest",
+    image = "//image:single_platform",
+    predicate = "//image:sbom",
+    repository = "ADD-VIA-COMMAND-LINE",
+    type = "spdx",
+)

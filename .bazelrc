@@ -1,0 +1,2 @@
+# Bootstrap Python runtime without having Python on the system.
+build --@rules_python//python/config_settings:bootstrap_impl=script
