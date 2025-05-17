@@ -45,32 +45,32 @@ jobs:
       - name: Build and Upload Image
         run: >-
           bazel run //image/upload
-          --jobs ${THREADS}
+          --jobs ${{ env.THREADS }}
           --
-          --repository ${REPOSITORY}
+          --repository ${{ env.REPOSITORY }}
           --tag latest
 
       - name: Upload Image SBOM
         run: >-
           bazel run //image/upload:attest
-          --jobs ${THREADS}
+          --jobs ${{ env.THREADS }}
           --platforms=//platform:linux_amd64
           --
-          --repository ${REPOSITORY}
+          --repository ${{ env.REPOSITORY }}
           --yes
           ;
           bazel run //image/upload:attest
-          --jobs ${THREADS}
+          --jobs ${{ env.THREADS }}
           --platforms=//platform:linux_arm64
           --
-          --repository ${REPOSITORY}
+          --repository ${{ env.REPOSITORY }}
           --yes
 
       - name: Sign Image
         run: >-
           bazel run //image/upload:sign
-          --jobs ${THREADS}
+          --jobs ${{ env.THREADS }}
           --
-          --repository ${REPOSITORY}
+          --repository ${{ env.REPOSITORY }}
           --yes
           --recursive

@@ -19,5 +19,4 @@ toolchain(
     name = "cosign_toolchain",
     toolchain = ":_cosign_toolchain",
     toolchain_type = "@rules_oci//cosign:toolchain_type",
-    use_target_platform_constraints = True,
 )
