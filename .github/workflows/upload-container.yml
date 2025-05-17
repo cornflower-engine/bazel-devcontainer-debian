@@ -16,6 +16,8 @@ jobs:
       packages: write
       # Needed for signing the images with a GitHub OIDC Token.
       id-token: write
+      # Needed for attestations to persist.
+      attestations: write
     
     steps:
       - name: Checkout Repository
