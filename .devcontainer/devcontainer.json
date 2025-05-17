@@ -1,0 +1,4 @@
+{
+  "name": "Bazel DevContainer",
+  "image": "ghcr.io/cornflower-engine/bazel-devcontainer-debian:latest"
+}
