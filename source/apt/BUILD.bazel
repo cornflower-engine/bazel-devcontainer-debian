@@ -1,6 +1,5 @@
 load("@rules_pkg//pkg:mappings.bzl", "pkg_mklink")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
-load(":defs.bzl", "applets")
 
 # Refresh lockfile.
 alias(
@@ -8,21 +7,16 @@ alias(
     actual = "@apt_packages//:lock",
 )
 
-# BusyBox applet symlinks.
-[
-    pkg_mklink(
-        name = applet,
-        link_name = applet,
-        target = "busybox",
-    )
-    for applet in applets
-]
+pkg_mklink(
+    name = "sh_symlink",
+    link_name = "sh",
+    target = "bash",
+)
 
 pkg_tar(
-    name = "busybox_symlinks",
+    name = "symlinks",
     srcs = [
-        ":{}".format(applet)
-        for applet in applets
+        ":sh_symlink",
     ],
     package_dir = "./usr/bin",
 )
@@ -34,7 +28,7 @@ pkg_tar(
     compressor_args = "--ultra -22",
     extension = "tar.zst",
     deps = [
-        ":busybox_symlinks",
+        ":symlinks",
         "@apt_packages",
     ],
 )

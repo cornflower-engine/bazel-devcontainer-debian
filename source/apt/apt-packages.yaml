@@ -19,10 +19,10 @@ packages:
   # - binutils  ### Seemingly not actually required.
   - libc-bin
   - libstdc++6
-  - busybox
-  # Bash shell.
-  # Pretty much required for running Bazel genrules.
+  # Tools required to run Bazel genrules.
   - bash
+  - coreutils
+  - sed
   # CA certificates.
   - ca-certificates
   # Timezone data.
