@@ -22,7 +22,10 @@ packages:
   # Tools required to run Bazel genrules.
   - bash
   - coreutils
+  - gzip
   - sed
+  - tar
+  - xz-utils
   # CA certificates.
   - ca-certificates
   # Timezone data.

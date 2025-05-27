@@ -353,6 +353,33 @@
 			"arch": "amd64",
 			"dependencies": [
 				{
+					"key": "libc6_2.40-4_amd64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_amd64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_amd64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				}
+			],
+			"key": "gzip_1.12-1.2_amd64",
+			"name": "gzip",
+			"sha256": "37947f02493e375f21cc7c20b55470a92481bc20a04a2cd672eb66bc2527145e",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/g/gzip/gzip_1.12-1.2_amd64.deb"
+			],
+			"version": "1.12-1.2"
+		},
+		{
+			"arch": "amd64",
+			"dependencies": [
+				{
 					"key": "libselinux1_3.7-3-p-b1_amd64",
 					"name": "libselinux1",
 					"version": "3.7-3+b1"
@@ -390,6 +417,91 @@
 				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/s/sed/sed_4.9-2_amd64.deb"
 			],
 			"version": "4.9-2"
+		},
+		{
+			"arch": "amd64",
+			"dependencies": [
+				{
+					"key": "libselinux1_3.7-3-p-b1_amd64",
+					"name": "libselinux1",
+					"version": "3.7-3+b1"
+				},
+				{
+					"key": "libpcre2-8-0_10.44-5_amd64",
+					"name": "libpcre2-8-0",
+					"version": "10.44-5"
+				},
+				{
+					"key": "libc6_2.40-4_amd64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_amd64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_amd64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "libacl1_2.3.2-2-p-b1_amd64",
+					"name": "libacl1",
+					"version": "2.3.2-2+b1"
+				}
+			],
+			"key": "tar_1.35-p-dfsg-3.1_amd64",
+			"name": "tar",
+			"sha256": "214c02e1aa291076a3147b8a4c4cae02fadf4c67df629186e3e313726faef1de",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/t/tar/tar_1.35+dfsg-3.1_amd64.deb"
+			],
+			"version": "1.35+dfsg-3.1"
+		},
+		{
+			"arch": "amd64",
+			"dependencies": [
+				{
+					"key": "liblzma5_5.6.3-1-p-b1_amd64",
+					"name": "liblzma5",
+					"version": "5.6.3-1+b1"
+				},
+				{
+					"key": "libc6_2.40-4_amd64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_amd64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_amd64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				}
+			],
+			"key": "xz-utils_5.6.3-1-p-b1_amd64",
+			"name": "xz-utils",
+			"sha256": "b70ffdedf05e8f40c847360d7a6a1044878bd1619d15f5bc437bdc548ce768be",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/x/xz-utils/xz-utils_5.6.3-1+b1_amd64.deb"
+			],
+			"version": "5.6.3-1+b1"
+		},
+		{
+			"arch": "amd64",
+			"dependencies": [],
+			"key": "liblzma5_5.6.3-1-p-b1_amd64",
+			"name": "liblzma5",
+			"sha256": "475f6f5447edbaa12f255c44330ef161047119fa544e25c0ac7362e716f34482",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/x/xz-utils/liblzma5_5.6.3-1+b1_amd64.deb"
+			],
+			"version": "5.6.3-1+b1"
 		},
 		{
 			"arch": "amd64",
@@ -1757,6 +1869,33 @@
 			"arch": "arm64",
 			"dependencies": [
 				{
+					"key": "libc6_2.40-4_arm64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_arm64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_arm64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				}
+			],
+			"key": "gzip_1.12-1.2_arm64",
+			"name": "gzip",
+			"sha256": "7426b6bb139f29db083f4224559cee35c066078cfa5ada70e1de36ac2678f1ca",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/g/gzip/gzip_1.12-1.2_arm64.deb"
+			],
+			"version": "1.12-1.2"
+		},
+		{
+			"arch": "arm64",
+			"dependencies": [
+				{
 					"key": "libselinux1_3.7-3-p-b1_arm64",
 					"name": "libselinux1",
 					"version": "3.7-3+b1"
@@ -1794,6 +1933,91 @@
 				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/s/sed/sed_4.9-2+b1_arm64.deb"
 			],
 			"version": "4.9-2+b1"
+		},
+		{
+			"arch": "arm64",
+			"dependencies": [
+				{
+					"key": "libselinux1_3.7-3-p-b1_arm64",
+					"name": "libselinux1",
+					"version": "3.7-3+b1"
+				},
+				{
+					"key": "libpcre2-8-0_10.44-5_arm64",
+					"name": "libpcre2-8-0",
+					"version": "10.44-5"
+				},
+				{
+					"key": "libc6_2.40-4_arm64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_arm64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_arm64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "libacl1_2.3.2-2-p-b1_arm64",
+					"name": "libacl1",
+					"version": "2.3.2-2+b1"
+				}
+			],
+			"key": "tar_1.35-p-dfsg-3.1_arm64",
+			"name": "tar",
+			"sha256": "c460a8294202ca3802b7c703b0bd70dd8bda1f2fc8785839595cf9d5e060d71b",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/t/tar/tar_1.35+dfsg-3.1_arm64.deb"
+			],
+			"version": "1.35+dfsg-3.1"
+		},
+		{
+			"arch": "arm64",
+			"dependencies": [
+				{
+					"key": "liblzma5_5.6.3-1-p-b1_arm64",
+					"name": "liblzma5",
+					"version": "5.6.3-1+b1"
+				},
+				{
+					"key": "libc6_2.40-4_arm64",
+					"name": "libc6",
+					"version": "2.40-4"
+				},
+				{
+					"key": "libgcc-s1_14.2.0-8_arm64",
+					"name": "libgcc-s1",
+					"version": "14.2.0-8"
+				},
+				{
+					"key": "gcc-14-base_14.2.0-8_arm64",
+					"name": "gcc-14-base",
+					"version": "14.2.0-8"
+				}
+			],
+			"key": "xz-utils_5.6.3-1-p-b1_arm64",
+			"name": "xz-utils",
+			"sha256": "b4bd236987fe402f426aa855cd54e13216636806d2c073d7094bc4dbd7ae061f",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/x/xz-utils/xz-utils_5.6.3-1+b1_arm64.deb"
+			],
+			"version": "5.6.3-1+b1"
+		},
+		{
+			"arch": "arm64",
+			"dependencies": [],
+			"key": "liblzma5_5.6.3-1-p-b1_arm64",
+			"name": "liblzma5",
+			"sha256": "272f961190fccce4a4e449dce45e5d36691a85402652304a2eb4378d658e55e5",
+			"urls": [
+				"https://snapshot.debian.org/archive/debian/20250101T023759Z/pool/main/x/xz-utils/liblzma5_5.6.3-1+b1_arm64.deb"
+			],
+			"version": "5.6.3-1+b1"
 		},
 		{
 			"arch": "arm64",
